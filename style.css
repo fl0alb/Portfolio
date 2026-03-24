@@ -533,8 +533,15 @@ h2 {
     position: relative;
     width: 800px;
     height: 550px;
+    margin: auto;
     perspective: 2000px;
 }
+
+.book img {
+    height: 500px;
+    border-radius: 10px;
+    scroll-snap-align: center;
+    flex-shrink: 0;
 
 .spread {
     position: absolute;
@@ -543,12 +550,16 @@ h2 {
     display: flex;
     transition: transform 1s;
     transform-style: preserve-3d;
+    flex-direction: row; /* 🔥 important */
+}
 }
 
 .spread img {
     width: 50%;
     height: 100%;
     object-fit: cover;
+    display: block; /* évite les bugs d’inline */
+}
 }
 
 /* gauche */
