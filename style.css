@@ -541,6 +541,18 @@ h2 {
     position: relative;
     width: 800px;
     height: 500px;
+    perspective: 2000px;
+}
+
+.book::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    left: 50%;
+    background: rgba(0,0,0,0.15);
+    transform: translateX(-50%);
+    z-index: 10;
 }
 
 /* DOUBLE PAGE */
@@ -548,8 +560,12 @@ h2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    display: none; /* 🔥 cache toutes les pages */
+    display: flex;
+    z-index: 0;
 }
+.spread:nth-child(1) { z-index: 5; }
+.spread:nth-child(2) { z-index: 4; }
+.spread:nth-child(3) { z-index: 3; }
 
 /* PAGE ACTIVE */
 .spread.active {
@@ -560,7 +576,8 @@ h2 {
 .spread img {
     width: 50%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* ✅ image entière */
+    background: white;   /* évite les trous gris */
 }
 
 /* STYLE GAUCHE / DROITE */
@@ -569,7 +586,13 @@ h2 {
 }
 
 .spread img:last-child {
-    border-radius: 0 10px 10px 0;
+    transform-origin: left;
+    transition: transform 1s;
+    backface-visibility: hidden;
+}
+
+.spread.flipped img:last-child {
+    transform: rotateY(-180deg);
 }
 
 /* BOUTONS */
