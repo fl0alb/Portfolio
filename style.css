@@ -560,7 +560,7 @@ h2 {
     object-fit: cover;
     display: block; /* évite les bugs d’inline */
 }
-}
+
 
 /* gauche */
 .left {
