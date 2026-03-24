@@ -536,6 +536,7 @@ h2 {
     gap: 20px;
     padding: 20px;
     scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
 }
 
 .book img {
