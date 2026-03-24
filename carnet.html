@@ -26,36 +26,35 @@
 <section>
     <h2>Mon carnet</h2>
 
-    <div class="book-container">
+    <div class="book">
 
-        <button onclick="prevPage()">←</button>
-
-        <div class="book">
-            <img src="images/carnet/carnet.jpeg" class="page active">
-            <img src="images/carnet/carnet1.jpeg" class="page">
-            <img src="images/carnet/carnet2.jpeg" class="page">
-            <img src="images/carnet/carnet3.jpeg" class="page">
+        <div class="spread active">
+            <img src="images/carnet/carnet.jpeg" class="left">
+            <img src="images/carnet/carnet1.jpeg" class="right">
         </div>
 
-        <button onclick="nextPage()">→</button>
+        <div class="spread">
+            <img src="images/carnet/carnet1.jpeg" class="left">
+            <img src="images/carnet/carnet2.jpeg" class="right">
+        </div>
 
     </div>
 </section>
 <script>
-let currentPage = 0;
-const pages = document.querySelectorAll(".page");
+let currentSpread = 0;
+const spreads = document.querySelectorAll(".spread");
 
 function nextPage() {
-    if (currentPage < pages.length) {
-        pages[currentPage].classList.add("flipped");
-        currentPage++;
+    if (currentSpread < spreads.length) {
+        spreads[currentSpread].classList.add("flipped");
+        currentSpread++;
     }
 }
 
 function prevPage() {
-    if (currentPage > 0) {
-        currentPage--;
-        pages[currentPage].classList.remove("flipped");
+    if (currentSpread > 0) {
+        currentSpread--;
+        spreads[currentSpread].classList.remove("flipped");
     }
 }
 </script>
