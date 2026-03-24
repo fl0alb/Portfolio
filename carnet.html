@@ -26,38 +26,54 @@
 <section>
     <h2>Mon carnet</h2>
 
+<div class="book-container">
+
+    <button onclick="prevPage()">←</button>
+
     <div class="book">
 
         <div class="spread active">
-            <img src="images/carnet/carnet.jpeg" class="left">
-            <img src="images/carnet/carnet1.jpeg" class="right">
+            <img src="images/carnet/carnet.jpeg">
+            <img src="images/carnet/carnet1.jpeg">
         </div>
 
         <div class="spread">
-            <img src="images/carnet/carnet1.jpeg" class="left">
-            <img src="images/carnet/carnet2.jpeg" class="right">
+            <img src="images/carnet/carnet2.jpeg">
+            <img src="images/carnet/carnet3.jpeg">
         </div>
 
     </div>
+
+    <button onclick="nextPage()">→</button>
+
+</div>
 </section>
+
 <script>
-let currentSpread = 0;
+let currentPage = 0;
 const spreads = document.querySelectorAll(".spread");
 
+function showPage(index) {
+    spreads.forEach(spread => spread.classList.remove("active"));
+    spreads[index].classList.add("active");
+}
+
 function nextPage() {
-    if (currentSpread < spreads.length) {
-        spreads[currentSpread].classList.add("flipped");
-        currentSpread++;
+    if (currentPage < spreads.length - 1) {
+        currentPage++;
+        showPage(currentPage);
     }
 }
 
 function prevPage() {
-    if (currentSpread > 0) {
-        currentSpread--;
-        spreads[currentSpread].classList.remove("flipped");
+    if (currentPage > 0) {
+        currentPage--;
+        showPage(currentPage);
     }
 }
 </script>
+
+
 <footer class="main-footer">
 
     <div class="footer-container">
