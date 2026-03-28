@@ -117,15 +117,33 @@ function showPage(index) {
 
 function nextPage() {
     if (currentPage < spreads.length - 1) {
-        currentPage++;
-        showPage(currentPage);
+
+        // animation
+        spreads[currentPage].classList.add("animate");
+
+        setTimeout(() => {
+            spreads[currentPage].classList.remove("active");
+            spreads[currentPage].classList.remove("animate");
+
+            currentPage++;
+            spreads[currentPage].classList.add("active");
+        }, 800); // durée = CSS
     }
 }
 
 function prevPage() {
     if (currentPage > 0) {
+
+        spreads[currentPage].classList.remove("active");
+
         currentPage--;
-        showPage(currentPage);
+        spreads[currentPage].classList.add("active");
+
+        spreads[currentPage].classList.add("animate");
+
+        setTimeout(() => {
+            spreads[currentPage].classList.remove("animate");
+        }, 10);
     }
 }
 

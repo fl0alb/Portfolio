@@ -581,11 +581,10 @@ h2 {
 
 .spread img:last-child {
     transform-origin: left;
-    transition: transform 1s;
-    backface-visibility: hidden;
+    transition: transform 0.8s ease;
 }
 
-.spread.flipped img:last-child {
+.spread.animate img:last-child {
     transform: rotateY(-180deg);
 }
 
