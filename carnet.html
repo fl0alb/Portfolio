@@ -32,40 +32,48 @@
 
     <div class="book">
 
-        <div class="spread">
-            <img src="images/carnet/blanche/carnet.jpeg">
-            <img src="images/carnet/carnet1.jpeg">
+        <div class="page">
+            <div class="front">
+                <img src="images/carnet/blanche/carnet.jpeg">
+                <img src="images/carnet/carnet1.jpeg">
+            </div>
+            <div class="back">
+                <img src="images/carnet/blanche/carnet40.jpeg">
+                <img src="images/carnet/carnet2.jpeg">
+            </div>
         </div>
 
-        <div class="spread">
-            <img src="images/carnet/blanche/carnet40.jpeg">
-            <img src="images/carnet/carnet2.jpeg">
+        <div class="page">
+            <div class="front">
+                <img src="images/carnet/blanche/carnet41.jpeg">
+                <img src="images/carnet/carnet3.jpeg">
+            </div>
+            <div class="back">
+                <img src="images/carnet/blanche/carnet42.jpeg">
+                <img src="images/carnet/carnet4.jpeg">
+            </div>
         </div>
-        <div class="spread">
-            <img src="images/carnet/blanche/carnet41.jpeg">
-            <img src="images/carnet/carnet3.jpeg">
+        <div class="page">
+            <div class="front">
+                <img src="images/carnet/blanche/carnet43.jpeg">
+                <img src="images/carnet/carnet5.jpeg">
+            </div>
+            <div class="back">
+                <img src="images/carnet/blanche/carnet44.jpeg">
+                <img src="images/carnet/carnet6.jpeg">
+            </div>
         </div>
-        <div class="spread">
-            <img src="images/carnet/blanche/carnet42.jpeg">
-            <img src="images/carnet/carnet4.jpeg">
+         <div class="page">
+            <div class="front">
+                <img src="images/carnet/blanche/carnet45.jpeg">
+                <img src="images/carnet/carnet7.jpeg">
+            </div>
+            <div class="back">
+                <img src="images/carnet/carnet8.jpeg">
+                <img src="images/carnet/carnet9.jpeg">
+            </div>
         </div>
-        <div class="spread">
-            <img src="images/carnet/blanche/carnet43.jpeg">
-            <img src="images/carnet/carnet5.jpeg">
-        </div>
-        <div class="spread">
-            <img src="images/carnet/blanche/carnet44.jpeg">
-            <img src="images/carnet/carnet6.jpeg">
-        </div>
-        <div class="spread">
-            <img src="images/carnet/blanche/carnet45.jpeg">
-            <img src="images/carnet/carnet7.jpeg">
-        </div>
-        <div class="spread">
-            <img src="images/carnet/carnet8.jpeg">
-            <img src="images/carnet/carnet9.jpeg">
-        </div>
-    </div>
+</div>
 
     <button onclick="nextPage()">→</button>
 
@@ -74,11 +82,11 @@
 
 <script>
 let currentPage = 0;
-const spreads = document.querySelectorAll(".spread");
+const pages = document.querySelectorAll(".page");
 
 function nextPage() {
-    if (currentPage < spreads.length) {
-        spreads[currentPage].classList.add("flipped");
+    if (currentPage < pages.length) {
+        pages[currentPage].classList.add("flipped");
         currentPage++;
     }
 }
@@ -86,11 +94,10 @@ function nextPage() {
 function prevPage() {
     if (currentPage > 0) {
         currentPage--;
-        spreads[currentPage].classList.remove("flipped");
+        pages[currentPage].classList.remove("flipped");
     }
 }
 </script>
-
 <footer class="main-footer">
 
     <div class="footer-container">

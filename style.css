@@ -529,50 +529,46 @@ h2 {
     background-color: #f8fffb;
 }
 /* CONTENEUR */
-.book-container {
+.book {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    perspective: 2000px;
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: transform 1s;
+}
+
+/* faces */
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+    backface-visibility: hidden;
 }
 
-/* LIVRE */
-.book {
-    position: relative;
-    width: 800px;
-    height: 500px;
-    perspective: 2000px;
-}
-
-.book::before {
-    content: "";
-    position: absolute;
-    width: 4px;
+.front img, .back img {
+    width: 50%;
     height: 100%;
-    left: 50%;
-    background: rgba(0,0,0,0.15);
-    transform: translateX(-50%);
-    z-index: 10;
+    object-fit: contain;
+    background: white;
 }
 
-/* DOUBLE PAGE */
-.book {
-    position: relative;
-    width: 800px;
-    height: 500px;
-    perspective: 2000px;
+/* dos */
+.back {
+    transform: rotateY(180deg);
 }
 
-/* RELIURE */
-.book::before {
-    content: "";
-    position: absolute;
-    width: 4px;
-    height: 100%;
-    left: 50%;
-    background: rgba(0,0,0,0.2);
-    transform: translateX(-50%);
-    z-index: 10;
+/* flip */
+.page.flipped {
+    transform: rotateY(-180deg);
 }
 
 /* DOUBLE PAGE */
