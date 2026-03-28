@@ -76,21 +76,27 @@
 let currentPage = 0;
 const spreads = document.querySelectorAll(".spread");
 
+function showPage(index) {
+    spreads.forEach(spread => {
+        spread.classList.remove("active");
+    });
+    spreads[index].classList.add("active");
+}
+
 function nextPage() {
-    if (currentPage < spreads.length) {
-        spreads[currentPage].classList.add("flipped");
+    if (currentPage < spreads.length - 1) {
         currentPage++;
+        showPage(currentPage);
     }
 }
 
 function prevPage() {
     if (currentPage > 0) {
         currentPage--;
-        spreads[currentPage].classList.remove("flipped");
+        showPage(currentPage);
     }
 }
 </script>
-
 
 <footer class="main-footer">
 
