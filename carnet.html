@@ -118,25 +118,20 @@ function showPage(index) {
 function nextPage() {
     if (currentPage < spreads.length - 1) {
 
-        // afficher la suivante derrière
-        spreads[currentPage + 1].classList.add("next");
+        // afficher la suivante DIRECTEMENT
+        spreads[currentPage + 1].classList.add("active");
 
-        // animation
+        // lancer animation
         spreads[currentPage].classList.add("animate");
 
         setTimeout(() => {
             spreads[currentPage].classList.remove("active", "animate");
-            spreads[currentPage + 1].classList.remove("next");
-
             currentPage++;
-            spreads[currentPage].classList.add("active");
         }, 800);
     }
 }
 function prevPage() {
     if (currentPage > 0) {
-
-        spreads[currentPage - 1].classList.add("next");
 
         spreads[currentPage].classList.remove("active");
 

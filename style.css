@@ -542,6 +542,8 @@ h2 {
     width: 800px;
     height: 500px;
     perspective: 1500px;
+    position: relative;
+    overflow: hidden
 }
 
 .book::before {
@@ -557,19 +559,15 @@ h2 {
 
 /* DOUBLE PAGE */
 .spread {
+    display: none;
     position: absolute;
     width: 100%;
     height: 100%;
 }
 
-.spread.active {
-    display: flex;
-    z-index: 2;
-}
-
+.spread.active,
 .spread.next {
     display: flex;
-    z-index: 1;
 }
 /* IMAGES */
 .spread img {
