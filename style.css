@@ -529,6 +529,14 @@ h2 {
     background-color: #f8fffb;
 }
 /* CONTENEUR */
+.book-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* LIVRE */
 .book {
     position: relative;
     width: 800px;
@@ -536,39 +544,35 @@ h2 {
     perspective: 2000px;
 }
 
-.page {
+.book::before {
+    content: "";
     position: absolute;
-    width: 100%;
+    width: 4px;
     height: 100%;
-    transform-style: preserve-3d;
-    transform-origin: left;
-    transition: transform 1s;
+    left: 50%;
+    background: rgba(0,0,0,0.15);
+    transform: translateX(-50%);
+    z-index: 10;
 }
 
-/* faces */
-.front, .back {
+/* DOUBLE PAGE */
+.book {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    perspective: 2000px;
+}
+
+/* RELIURE */
+.book::before {
+    content: "";
     position: absolute;
-    width: 100%;
+    width: 4px;
     height: 100%;
-    display: flex;
-    backface-visibility: hidden;
-}
-
-.front img, .back img {
-    width: 50%;
-    height: 100%;
-    object-fit: contain;
-    background: white;
-}
-
-/* dos */
-.back {
-    transform: rotateY(180deg);
-}
-
-/* flip */
-.page.flipped {
-    transform: rotateY(-180deg);
+    left: 50%;
+    background: rgba(0,0,0,0.2);
+    transform: translateX(-50%);
+    z-index: 10;
 }
 
 /* DOUBLE PAGE */
