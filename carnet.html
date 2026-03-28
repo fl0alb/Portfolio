@@ -114,7 +114,6 @@ function showPage(index) {
     spreads[index].classList.add("active");
 }
 
-
 function nextPage() {
     if (currentPage < spreads.length) {
         spreads[currentPage].classList.add("flipped");
@@ -125,7 +124,7 @@ function nextPage() {
 function prevPage() {
     if (currentPage > 0) {
         currentPage--;
-        showPage(currentPage);
+        spreads[currentPage].classList.remove("flipped");
     }
 }
 </script>
