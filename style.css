@@ -528,42 +528,28 @@ h2 {
     color: #1f3f2e;
     background-color: #f8fffb;
 }
-/* CONTENEUR */
+/* ===== CONTENEUR ===== */
 .book-container {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 40px;
 }
 
-/* LIVRE */
+/* ===== LIVRE ===== */
 .book {
     position: relative;
-    width: 800px;
-    height: 500px;
+    width: 90vw;
+    max-width: 800px;
+    height: 60vh;
+    max-height: 500px;
     perspective: 2000px;
 }
 
-.book::before {
-    content: "";
-    position: absolute;
-    width: 4px;
-    height: 100%;
-    left: 50%;
-    background: rgba(0,0,0,0.15);
-    transform: translateX(-50%);
-    z-index: 10;
-}
-
-/* DOUBLE PAGE */
-.book {
-    position: relative;
-    width: 800px;
-    height: 500px;
-    perspective: 2000px;
-}
-
-/* RELIURE */
+/* RELIURE (milieu du livre) */
 .book::before {
     content: "";
     position: absolute;
@@ -574,15 +560,8 @@ h2 {
     transform: translateX(-50%);
     z-index: 10;
 }
-.book {
-    position: relative;
-    width: 90vw;          /* prend 90% de l'écran */
-    max-width: 800px;     /* mais pas plus grand que 800px */
-    height: 60vh;         /* hauteur relative à l'écran */
-    max-height: 500px;
-    perspective: 2000px;
-}
 
+/* ===== PAGES ===== */
 .page {
     position: absolute;
     width: 100%;
@@ -592,6 +571,15 @@ h2 {
     transition: transform 1s;
 }
 
+/* ORDRE DES PAGES (super important) */
+.page:nth-child(1) { z-index: 10; }
+.page:nth-child(2) { z-index: 9; }
+.page:nth-child(3) { z-index: 8; }
+.page:nth-child(4) { z-index: 7; }
+.page:nth-child(5) { z-index: 6; }
+.page:nth-child(6) { z-index: 5; }
+
+/* ===== FACES ===== */
 .front, .back {
     position: absolute;
     width: 100%;
@@ -600,6 +588,7 @@ h2 {
     backface-visibility: hidden;
 }
 
+/* IMAGES */
 .front img, .back img {
     width: 50%;
     height: 100%;
@@ -607,16 +596,17 @@ h2 {
     background: white;
 }
 
+/* ARRIÈRE DE PAGE */
 .back {
     transform: rotateY(180deg);
 }
 
+/* ANIMATION */
 .page.flipped {
     transform: rotateY(-180deg);
 }
-/* DOUBLE PAGE */
 
-/* BOUTONS */
+/* ===== BOUTONS ===== */
 .book-container button {
     padding: 12px 18px;
     font-size: 20px;
@@ -625,4 +615,9 @@ h2 {
     color: white;
     border-radius: 8px;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.book-container button:hover {
+    transform: scale(1.1);
 }
