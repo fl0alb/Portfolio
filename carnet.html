@@ -32,28 +32,40 @@
 
     <div class="book">
 
-       <div class="book">
+        <div class="spread active">
+            <img src="images/carnet/blanche/carnet.jpeg">
+            <img src="images/carnet/carnet1.jpeg">
+        </div>
 
-    <!-- PAGE GAUCHE -->
-    <div class="left-page">
-        <img src="images/carnet/blanche/carnet.jpeg">
+        <div class="spread">
+            <img src="images/carnet/blanche/carnet40.jpeg">
+            <img src="images/carnet/carnet2.jpeg">
+        </div>
+        <div class="spread">
+            <img src="images/carnet/blanche/carnet41.jpeg">
+            <img src="images/carnet/carnet3.jpeg">
+        </div>
+        <div class="spread">
+            <img src="images/carnet/blanche/carnet42.jpeg">
+            <img src="images/carnet/carnet4.jpeg">
+        </div>
+        <div class="spread">
+            <img src="images/carnet/blanche/carnet43.jpeg">
+            <img src="images/carnet/carnet5.jpeg">
+        </div>
+        <div class="spread">
+            <img src="images/carnet/blanche/carnet44.jpeg">
+            <img src="images/carnet/carnet6.jpeg">
+        </div>
+        <div class="spread">
+            <img src="images/carnet/blanche/carnet45.jpeg">
+            <img src="images/carnet/carnet7.jpeg">
+        </div>
+        <div class="spread">
+            <img src="images/carnet/carnet8.jpeg">
+            <img src="images/carnet/carnet9.jpeg">
+        </div>
     </div>
-
-    <!-- PAGE DROITE -->
-    <div class="right-page">
-        <img src="images/carnet/carnet1.jpeg" class="active">
-        <img src="images/carnet/carnet2.jpeg">
-        <img src="images/carnet/carnet3.jpeg">
-        <img src="images/carnet/carnet4.jpeg">
-        <img src="images/carnet/carnet5.jpeg">
-        <img src="images/carnet/carnet6.jpeg">
-        <img src="images/carnet/carnet7.jpeg">
-        <img src="images/carnet/carnet8.jpeg">
-        <img src="images/carnet/carnet9.jpeg">
-    </div>
-
-</div>
-</div>
 
     <button onclick="nextPage()">→</button>
 
@@ -61,28 +73,32 @@
 </section>
 
 <script>
-let current = 0;
-const images = document.querySelectorAll(".right-page img");
+let currentPage = 0;
+const spreads = document.querySelectorAll(".spread");
 
-function showImage(index) {
-    images.forEach(img => img.classList.remove("active"));
-    images[index].classList.add("active");
+function showPage(index) {
+    spreads.forEach(spread => {
+        spread.classList.remove("active");
+    });
+    spreads[index].classList.add("active");
 }
 
 function nextPage() {
-    if (current < images.length - 1) {
-        current++;
-        showImage(current);
+    if (currentPage < spreads.length - 1) {
+        currentPage++;
+        showPage(currentPage);
     }
 }
 
 function prevPage() {
-    if (current > 0) {
-        current--;
-        showImage(current);
+    if (currentPage > 0) {
+        currentPage--;
+        showPage(currentPage);
     }
 }
 </script>
+
+
 <footer class="main-footer">
 
     <div class="footer-container">
