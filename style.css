@@ -534,76 +534,54 @@ h2 {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    width: 100%;
-    overflow: hidden;
-    margin-top: 40px;
 }
 
 /* ===== LIVRE ===== */
 .book {
-    position: relative;
+    display: flex;
     width: 90vw;
     max-width: 800px;
-    height: 60vh;
-    max-height: 500px;
-    perspective: 2000px;
+    height: 500px;
+    background: white;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-/* RELIURE (milieu du livre) */
-.book::before {
-    content: "";
-    position: absolute;
-    width: 4px;
-    height: 100%;
-    left: 50%;
-    background: rgba(0,0,0,0.2);
-    transform: translateX(-50%);
-    z-index: 10;
-}
-
-/* ===== PAGES ===== */
-.page {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform-origin: left;
-    transform-style: preserve-3d;
-    transition: transform 1s;
-}
-
-/* ORDRE DES PAGES (super important) */
-.page:nth-child(1) { z-index: 10; }
-.page:nth-child(2) { z-index: 9; }
-.page:nth-child(3) { z-index: 8; }
-.page:nth-child(4) { z-index: 7; }
-.page:nth-child(5) { z-index: 6; }
-.page:nth-child(6) { z-index: 5; }
-
-/* ===== FACES ===== */
-.front, .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    backface-visibility: hidden;
-}
-
-/* IMAGES */
-.front img, .back img {
+/* ===== PAGE GAUCHE (fixe) ===== */
+.left-page {
     width: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px solid rgba(0,0,0,0.1);
+}
+
+.left-page img {
+    width: 100%;
     height: 100%;
     object-fit: contain;
-    background: white;
 }
 
-/* ARRIÈRE DE PAGE */
-.back {
-    transform: rotateY(180deg);
+/* ===== PAGE DROITE ===== */
+.right-page {
+    width: 50%;
+    position: relative;
 }
 
-/* ANIMATION */
-.page.flipped {
-    transform: rotateY(-180deg);
+.right-page img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* IMAGE ACTIVE */
+.right-page img.active {
+    opacity: 1;
 }
 
 /* ===== BOUTONS ===== */
@@ -615,9 +593,4 @@ h2 {
     color: white;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.2s;
-}
-
-.book-container button:hover {
-    transform: scale(1.1);
 }

@@ -32,47 +32,27 @@
 
     <div class="book">
 
-        <div class="page">
-            <div class="front">
-                <img src="images/carnet/blanche/carnet.jpeg">
-                <img src="images/carnet/carnet1.jpeg">
-            </div>
-            <div class="back">
-                <img src="images/carnet/blanche/carnet40.jpeg">
-                <img src="images/carnet/carnet2.jpeg">
-            </div>
-        </div>
+       <div class="book">
 
-        <div class="page">
-            <div class="front">
-                <img src="images/carnet/blanche/carnet41.jpeg">
-                <img src="images/carnet/carnet3.jpeg">
-            </div>
-            <div class="back">
-                <img src="images/carnet/blanche/carnet42.jpeg">
-                <img src="images/carnet/carnet4.jpeg">
-            </div>
-        </div>
-        <div class="page">
-            <div class="front">
-                <img src="images/carnet/blanche/carnet43.jpeg">
-                <img src="images/carnet/carnet5.jpeg">
-            </div>
-            <div class="back">
-                <img src="images/carnet/blanche/carnet44.jpeg">
-                <img src="images/carnet/carnet6.jpeg">
-            </div>
-        </div>
-         <div class="page">
-            <div class="front">
-                <img src="images/carnet/blanche/carnet45.jpeg">
-                <img src="images/carnet/carnet7.jpeg">
-            </div>
-            <div class="back">
-                <img src="images/carnet/carnet8.jpeg">
-                <img src="images/carnet/carnet9.jpeg">
-            </div>
-        </div>
+    <!-- PAGE GAUCHE -->
+    <div class="left-page">
+        <img src="images/carnet/blanche/carnet.jpeg">
+    </div>
+
+    <!-- PAGE DROITE -->
+    <div class="right-page">
+        <img src="images/carnet/carnet1.jpeg" class="active">
+        <img src="images/carnet/carnet2.jpeg">
+        <img src="images/carnet/carnet3.jpeg">
+        <img src="images/carnet/carnet4.jpeg">
+        <img src="images/carnet/carnet5.jpeg">
+        <img src="images/carnet/carnet6.jpeg">
+        <img src="images/carnet/carnet7.jpeg">
+        <img src="images/carnet/carnet8.jpeg">
+        <img src="images/carnet/carnet9.jpeg">
+    </div>
+
+</div>
 </div>
 
     <button onclick="nextPage()">→</button>
@@ -81,20 +61,25 @@
 </section>
 
 <script>
-let currentPage = 0;
-const pages = document.querySelectorAll(".page");
+let current = 0;
+const images = document.querySelectorAll(".right-page img");
+
+function showImage(index) {
+    images.forEach(img => img.classList.remove("active"));
+    images[index].classList.add("active");
+}
 
 function nextPage() {
-    if (currentPage < pages.length) {
-        pages[currentPage].classList.add("flipped");
-        currentPage++;
+    if (current < images.length - 1) {
+        current++;
+        showImage(current);
     }
 }
 
 function prevPage() {
-    if (currentPage > 0) {
-        currentPage--;
-        pages[currentPage].classList.remove("flipped");
+    if (current > 0) {
+        current--;
+        showImage(current);
     }
 }
 </script>
