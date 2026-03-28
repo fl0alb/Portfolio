@@ -576,8 +576,10 @@ h2 {
 }
 .book {
     position: relative;
-    width: 800px;
-    height: 500px;
+    width: 90vw;          /* prend 90% de l'écran */
+    max-width: 800px;     /* mais pas plus grand que 800px */
+    height: 60vh;         /* hauteur relative à l'écran */
+    max-height: 500px;
     perspective: 2000px;
 }
 
