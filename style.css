@@ -541,7 +541,7 @@ h2 {
     position: relative;
     width: 800px;
     height: 500px;
-    perspective: 2000px;
+    perspective: 1500px;
 }
 
 .book::before {
@@ -578,14 +578,18 @@ h2 {
 .spread img:first-child {
     border-radius: 10px 0 0 10px;
 }
-
+.spread.animate img:first-child {
+    transform: scale(0.98);
+    transition: transform 0.8s ease;
+}
 .spread img:last-child {
     transform-origin: left;
     transition: transform 0.8s ease;
+    backface-visibility: hidden; /* 👈 évite bug visuel */
 }
-
 .spread.animate img:last-child {
     transform: rotateY(-180deg);
+    box-shadow: -20px 0 40px rgba(0,0,0,0.3); /* 👈 magie */
 }
 
 /* BOUTONS */
