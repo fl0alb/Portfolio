@@ -125,7 +125,7 @@ function nextPage() {
 function prevPage() {
     if (currentPage > 0) {
         currentPage--;
-        showPage(currentPage);
+        showPage(currentPage).classList.remove("flipped");
     }
 }
 </script>
