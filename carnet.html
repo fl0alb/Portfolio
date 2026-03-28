@@ -32,7 +32,7 @@
 
     <div class="book">
 
-        <div class="spread active">
+        <div class="spread">
             <img src="images/carnet/blanche/carnet.jpeg">
             <img src="images/carnet/carnet1.jpeg">
         </div>
@@ -76,24 +76,17 @@
 let currentPage = 0;
 const spreads = document.querySelectorAll(".spread");
 
-function showPage(index) {
-    spreads.forEach(spread => {
-        spread.classList.remove("active");
-    });
-    spreads[index].classList.add("active");
-}
-
 function nextPage() {
-    if (currentPage < spreads.length - 1) {
+    if (currentPage < spreads.length) {
+        spreads[currentPage].classList.add("flipped");
         currentPage++;
-        showPage(currentPage);
     }
 }
 
 function prevPage() {
     if (currentPage > 0) {
         currentPage--;
-        showPage(currentPage);
+        spreads[currentPage].classList.remove("flipped");
     }
 }
 </script>
