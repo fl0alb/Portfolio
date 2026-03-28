@@ -560,17 +560,12 @@ h2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    display: none; /* 🔥 cache toutes les pages */
+    display: none;
 }
-.spread:nth-child(1) { z-index: 5; }
-.spread:nth-child(2) { z-index: 4; }
-.spread:nth-child(3) { z-index: 3; }
 
-/* PAGE ACTIVE */
 .spread.active {
-    display: flex; /* ✅ UNE seule page visible */
+    display: flex;
 }
-
 /* IMAGES */
 .spread img {
     width: 50%;
