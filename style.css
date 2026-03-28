@@ -568,7 +568,7 @@ h2 {
 
 /* PAGE ACTIVE */
 .spread.active {
-    display: flex; /* 🔥 affiche seulement une double page */
+    display: flex;
 }
 
 /* IMAGES */
