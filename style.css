@@ -560,11 +560,16 @@ h2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    display: none;
 }
 
 .spread.active {
     display: flex;
+    z-index: 2;
+}
+
+.spread.next {
+    display: flex;
+    z-index: 1;
 }
 /* IMAGES */
 .spread img {
@@ -572,6 +577,7 @@ h2 {
     height: 100%;
     object-fit: contain; /* ✅ image entière */
     background: white;   /* évite les trous gris */
+    backface-visibility: hidden;
 }
 
 /* STYLE GAUCHE / DROITE */
