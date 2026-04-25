@@ -114,11 +114,10 @@ function showPage(index) {
     spreads[index].classList.add("active");
 }
 
-
 function nextPage() {
-    if (currentPage < spreads.length) {
-        spreads[currentPage].classList.add("flipped");
+    if (currentPage < spreads.length - 1) {
         currentPage++;
+        showPage(currentPage);
     }
 }
 
@@ -128,8 +127,10 @@ function prevPage() {
         showPage(currentPage);
     }
 }
-</script>
 
+// Initialisation
+showPage(currentPage);
+</script>
 
 <footer class="main-footer">
 
