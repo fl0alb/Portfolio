@@ -30,33 +30,89 @@
 <section>
     <h2>Description</h2>
     <p>
-        Ce projet consistait à créer une serre connectée.
-    </p>
+# Projet de serre connectée intelligente
 
-    <h2>Composants électroniques</h2>
-    <p>La serre utilise plusieurs composants électroniques reliés à un microcontrôleur ESP32 :<br>
+## Introduction
 
-    - ESP32 (microcontrôleur principal)<br>
-    - Capteur pression / température (BMP280)<br>
-    - Capteur qualité de l’air (TVOC / CO₂)<br>
-    - Capteur de luminosité<br>
-    - Capteur température / humidité<br>
-    - Pompe 12V<br>
-    - Relais de commande<br>
-    - Capteur niveau réservoir (prévu)
-    </p>
+Nous avons tous déjà eu des plantes que nous souhaitions voir grandir. Nous en prenons soin au début : nous les arrosons régulièrement, nous faisons attention à leur environnement. Cependant, avec le temps, il arrive que nous oubliions de les arroser une fois, puis deux, puis plusieurs fois.
 
-    <h2>Compétences développées</h2>
-    <p>
-        L’objectif du projet est de créer une serre connectée capable de gérer automatiquement les besoins d’une plante grâce à plusieurs capteurs et un système d’arrosage intelligent.<br>
-La serre doit pouvoir :<br>
+Finalement, nous nous rendons compte trop tard que notre plante (que nous appellerons « Bob ») est en train de dépérir. Chaque année, de nombreuses plantes meurent simplement à cause d’un manque d’attention.
 
-- surveiller l’environnement en temps réel,<br>
-- arroser automatiquement selon l’humidité,<br>
-- afficher les données sur une interface web,<br>
-- évoluer vers une gestion assistée par IA.<br>
+C’est de là que nous est venue l’idée : créer une solution permettant d’entretenir les plantes automatiquement. Le problème que nous nous sommes efforcés de résoudre est le suivant :  
+**Comment permettre à chacun de prendre soin efficacement de ses plantes, même en cas de manque d’attention ?**
 
-L’utilisateur n’a qu’à remplir le réservoir d’eau : la serre s’occupe du reste.
+L’objectif principal de notre serre connectée intelligente est donc d’automatiser l’entretien des plantes, notamment l’arrosage, tout en permettant un suivi précis des conditions de vie de la plante.
+
+Grâce à notre projet, l’utilisateur peut consulter en temps réel différentes données telles que la température, l’humidité ou la qualité de l’air. Cela permet non seulement d’éviter la mort des plantes, mais aussi de sensibiliser à l’importance de l’environnement et du vivant.
+
+À plus long terme, nous souhaitons aller encore plus loin en intégrant un système d’intelligence artificielle capable d’analyser les données, d’optimiser les actions à effectuer et même de reconnaître les plantes afin d’adapter les soins automatiquement.
+
+---
+
+## Travail d’équipe
+
+Ce projet a été réalisé en équipe. Nous sommes trois élèves passionnés par l’informatique et souhaitant poursuivre nos études dans ce domaine.
+
+Notre groupe est composé de :
+- ALBERT Flore  
+- ROUIE Paul-Elian  
+- GENNESON Lucas  
+
+Le travail a été organisé de manière collaborative, avec une répartition des tâches en fonction des compétences et des préférences de chacun, tout en gardant une partie importante de travail en commun.
+
+- **ALBERT Flore** a participé à la réalisation du montage du projet, au développement de la partie web avec Lucas, à la recherche de documentation sur MicroPython, au débogage du programme ainsi qu’à la conception du code global. Elle a également contribué à la création de bots permettant de simuler les capteurs.  
+- **ROUIE Paul-Elian** s’est chargé de la modélisation 3D du support de la serre, de l’intégration des bibliothèques nécessaires au fonctionnement, ainsi que de l’ajout de la pompe avec un relais. Il a lui aussi participé à la conception du code.  
+- **GENNESON Lucas** a réalisé le schéma du montage sur Fritzing, participé au montage, développé la partie web avec Flore, intégré les bibliothèques avec Paul-Elian, et contribué au code ainsi qu’à la création des bots simulant les capteurs.
+
+---
+
+## Démarche et réalisation
+
+Nous avons commencé par une phase de réflexion afin de structurer notre idée et définir les fonctionnalités principales de notre projet.
+
+Nous avons ensuite choisi les technologies à utiliser, notamment MicroPython, qui nous permet de programmer des micro-contrôleurs de manière efficace. Au départ, nous avons utilisé une carte ESP8266, accompagnée de capteurs classiques comme le BMP280 pour la pression et la température, ou le SGP30 pour la qualité de l’air.
+
+Cependant, au fur et à mesure de l’évolution du projet, nous avons souhaité ajouter davantage de fonctionnalités, notamment plus de capteurs et un système d’arrosage automatique avec une pompe. L’ESP32 est plus performant et offre davantage de possibilités. Cette transition a constitué une étape importante dans notre projet.
+
+Nous avons ensuite développé un site web permettant d’accéder aux données des capteurs à distance. Cela permet à l’utilisateur de suivre en temps réel l’état de sa plante et les conditions de la serre.
+
+En parallèle, nous avons réalisé une modélisation 2D de la serre afin de proposer un rendu professionnel et d’envisager une future fabrication concrète.
+
+---
+
+## Résultats
+
+Au moment du rendu, notre projet est fonctionnel.
+
+Les capteurs collectent des données, la pompe peut être contrôlée pour arroser automatiquement la plante, et le site web permet de visualiser les informations importantes.
+
+Pour nous assurer du bon fonctionnement de l’ensemble, nous avons testé chaque composant individuellement avant de les intégrer au système complet. Nous avons également utilisé des bots pour simuler les capteurs, ce qui nous a permis de continuer le développement même en l’absence de matériel.
+
+De nombreux tests ont été réalisés afin de détecter et corriger les bugs au mieux.
+
+---
+
+## Difficultés rencontrées
+
+Au cours du projet, nous avons rencontré plusieurs difficultés.
+
+La première concernait les limites techniques de l’ESP8266, qui nous ont obligés à changer de matériel. Nous avons également rencontré des problèmes liés aux bibliothèques et à leur compatibilité, ainsi que des erreurs dans le code.
+
+La gestion des capteurs et leur intégration dans un système global ont aussi représenté un défi.
+
+Pour surmonter ces difficultés, nous avons effectué de nombreuses recherches dans la documentation, testé différentes solutions, et travaillé en collaboration pour nous entraider.
+
+Le passage à l’ESP32 a permis de résoudre une grande partie des limitations techniques.
+
+---
+
+## Conclusion
+
+En conclusion, notre projet de serre connectée intelligente répond à un besoin concret du quotidien en facilitant l’entretien des plantes grâce à la technologie.
+
+Il s’inscrit également dans une démarche écologique en encourageant une meilleure gestion du vivant.
+
+Ce projet pourrait être amélioré à l’avenir grâce à l’ajout d’une intelligence artificielle, d’un système de reconnaissance des plantes ou encore d’une application mobile plus développée.
     </p>
 </section>
 <footer class="main-footer">
