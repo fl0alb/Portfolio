@@ -7,9 +7,14 @@
     <link rel="stylesheet" href="static/moi.css">
     <link rel="shortcut icon" href="images/logo.png">
 </head>
-<body>
 
+<body>
 <div id="mediaModal" class="modal" onclick="closeMedia()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <img id="modalImg" style="display:none;">
+        <video id="modalVideo" controls style="display:none;"></video>
+    </div>
+</div>
 <header>
     <h1>Qui suis-je ?</h1>
     <nav>
@@ -46,38 +51,38 @@
         <img id="modalImg" class="modal-content">
     </div>
 
-
 <script>
-function toggle() {
-    const allPrivate = document.querySelectorAll(".private");
-    const title = document.getElementById("info-title");
-
-    allPrivate.forEach(el => {
-        el.classList.toggle("blur");
-    });
-
-    if (allPrivate[0].classList.contains("blur")) {
-        title.textContent = "Mode anonyme activé";
-    } else {
-        title.textContent = "Mes informations";
-    }
-}
-
 function openMedia(element) {
-    if (element.closest(".blur")) {
-        // Ne rien faire si l'image est floutée
-        return;
-    }
+    // Bloque si flouté
+    if (element.closest(".blur")) return;
+
     const modal = document.getElementById("mediaModal");
     const modalImg = document.getElementById("modalImg");
+    const modalVideo = document.getElementById("modalVideo");
+
     modal.style.display = "flex";
-    modalImg.src = element.src;
+
+    if (element.tagName === "IMG") {
+        modalImg.src = element.src;
+        modalImg.style.display = "block";
+        modalVideo.style.display = "none";
+    }
+
+    if (element.tagName === "VIDEO") {
+        modalVideo.src = element.querySelector("source").src;
+        modalVideo.style.display = "block";
+        modalImg.style.display = "none";
+        modalVideo.play();
+    }
 }
 
-
-function closeModal() {
+function closeMedia() {
     const modal = document.getElementById("mediaModal");
+    const modalVideo = document.getElementById("modalVideo");
+
     modal.style.display = "none";
+    modalVideo.pause();
+    modalVideo.currentTime = 0;
 }
 </script>
 
