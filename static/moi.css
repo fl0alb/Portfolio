@@ -1,9 +1,4 @@
-@media (max-width: 768px) {
-    .profile-pic {
-        width: 150px;
-        height: 200px;
-    }
-}
+
 
 /* ===== ACTIVITÉS / VIDÉOS ===== */
 
@@ -151,4 +146,6 @@
     max-height: 80vh !important;
     object-fit: contain;
 }
-img { width: 50%}
+.profile-pic {
+    width: 50px;
+}

@@ -126,7 +126,12 @@ a {
     }
 
 }
-
+@media (max-width: 768px) {
+    .profile-pic {
+        width: 150px;
+        height: 200px;
+    }
+}
 
 /* ===== FOOTER MODERNE ===== */
 
