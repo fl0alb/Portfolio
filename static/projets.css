@@ -1,3 +1,19 @@
+/* ===== BOUTON RETOUR ===== */
+
+.back-button {
+    text-decoration: none;
+    font-weight: 600;
+    color: #2e6f5e;
+    font-size: 15px;
+    transition: opacity 0.2s ease;
+}
+.top-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: 30px auto;
+}
 /* ===== PAGE PROJETS ===== */
 
 .projects-grid {
