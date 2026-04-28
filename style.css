@@ -613,5 +613,5 @@ h2 {
 }
 
 .inline-list li::before {
-    content: "* ";
+    content: "• ";
 }
