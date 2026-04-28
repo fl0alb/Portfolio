@@ -4,6 +4,7 @@
         height: 200px;
     }
 }
+
 /* ===== ACTIVITÉS / VIDÉOS ===== */
 
 .activity-intro {
@@ -137,13 +138,18 @@
 }
 
 .modal-content {
-    max-width: 90%;
-    max-height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 #modalImg,
 #modalVideo {
-    max-width: 100%;
-    max-height: 90vh;
+    width: auto;
+    height: auto;
+    max-width: 80vw;   /* largeur max = 80% écran */
+    max-height: 80vh;  /* hauteur max = 80% écran */
+    object-fit: contain;
     border-radius: 20px;
 }
