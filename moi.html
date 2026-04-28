@@ -52,37 +52,36 @@
     </div>
 
 <script>
-function openMedia(element) {
-    // Bloque si flouté
-    if (element.closest(".blur")) return;
+function toggle() {
+    const allPrivate = document.querySelectorAll(".private");
+    const title = document.getElementById("info-title");
 
-    const modal = document.getElementById("mediaModal");
-    const modalImg = document.getElementById("modalImg");
-    const modalVideo = document.getElementById("modalVideo");
+    allPrivate.forEach(el => {
+        el.classList.toggle("blur");
+    });
 
-    modal.style.display = "flex";
-
-    if (element.tagName === "IMG") {
-        modalImg.src = element.src;
-        modalImg.style.display = "block";
-        modalVideo.style.display = "none";
-    }
-
-    if (element.tagName === "VIDEO") {
-        modalVideo.src = element.querySelector("source").src;
-        modalVideo.style.display = "block";
-        modalImg.style.display = "none";
-        modalVideo.play();
+    if (allPrivate[0].classList.contains("blur")) {
+        title.textContent = "Mode anonyme activé";
+    } else {
+        title.textContent = "Mes informations";
     }
 }
 
-function closeMedia() {
+function openMedia(element) {
+    if (element.closest(".blur")) {
+        // Ne rien faire si l'image est floutée
+        return;
+    }
     const modal = document.getElementById("mediaModal");
-    const modalVideo = document.getElementById("modalVideo");
+    const modalImg = document.getElementById("modalImg");
+    modal.style.display = "flex";
+    modalImg.src = element.src;
+}
 
+
+function closeModal() {
+    const modal = document.getElementById("mediaModal");
     modal.style.display = "none";
-    modalVideo.pause();
-    modalVideo.currentTime = 0;
 }
 </script>
 
