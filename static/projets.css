@@ -1,0 +1,60 @@
+/* ===== PAGE PROJETS ===== */
+
+.projects-grid {
+    max-width: 1000px;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.project-card {
+    display: block;
+    text-decoration: none;
+    background-color: white;
+    border-radius: 14px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    color: #2e2e2e;
+}
+
+.project-card h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #2e6f5e;
+}
+
+.project-card p {
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.project-card span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2e6f5e;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(46, 111, 94, 0.15);
+}
+
+
+.inline-list {
+    display: flex !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 10px 0 !important;
+    gap: 25px;
+}
+
+.inline-list li {
+    display: inline;
+}
+
+.inline-list li::before {
+    content: "• ";
+}

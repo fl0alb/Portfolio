@@ -1,0 +1,131 @@
+/* ===== ACTIVITÉS / VIDÉOS ===== */
+
+.activity-intro {
+    margin-bottom: 30px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+}
+.youtube-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.video-card {
+    background: #f4f7f6;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.video-card h3 {
+    margin-bottom: 15px;
+    color: #1f3d35;
+    font-size: 18px;
+}
+
+/* Rendre YouTube responsive */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Instagram wrapper */
+.instagram-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.activity-note {
+    margin-top: 30px;
+}
+/* ===== SECTION ART ===== */
+
+.art-intro {
+    margin-bottom: 30px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.art-card {
+    background: #f4f7f6;
+    padding: 15px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.art-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.art-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.art-card img:hover {
+    transform: scale(1.03);
+}
+
+.art-card p {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.art-video {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.art-video:hover {
+    transform: scale(1.03);
+}
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal-content img,
+.modal-content video {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 20px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+}

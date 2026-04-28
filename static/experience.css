@@ -1,0 +1,38 @@
+/* ===== PAGE EXPERIENCE ===== */
+
+.project-buttons {
+    margin-top: 25px;
+}
+
+.project-btn {
+    padding: 14px;
+}
+
+
+
+/*======BOUTON LIEN ======*/
+.project-buttons {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+}
+
+.project-btn {
+    text-decoration: none;
+    padding: 14px 18px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #2c2c2c;
+    border: 1px solid #e0e0e0;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+/* Hover ultra subtil */
+.project-btn:hover {
+    border-color: #99daa5;
+    color: #1f3f2e;
+    background-color: #f8fffb;
+}

@@ -1,0 +1,31 @@
+/* ===== CARTE INFORMATIONS ===== */
+
+.info-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.info-text p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.03);
+}

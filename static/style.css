@@ -1,0 +1,298 @@
+/* ===== BASE ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #2e2e2e;
+    line-height: 1.7;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: linear-gradient(135deg, #9fd6c2, #bfe5d6);
+    padding: 50px 20px;
+    text-align: center;
+    border-bottom: 1px solid #d0e6dc;
+}
+
+header h1 {
+    font-size: 42px;
+    font-weight: 600;
+    color: #1f3d35;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    color: #1f3d35;
+    text-decoration: none;
+    margin: 0 16px;
+    font-weight: 600;
+    font-size: 15px;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background-color: #1f3d35;
+    transition: width 0.25s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ===== SECTIONS ===== */
+section {
+    background-color: #ffffff;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 45px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+    color: #2e6f5e;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 16px;
+}
+
+/* ===== COMPÉTENCES ===== */
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.skills figure {
+    background-color: #f4f7f6;
+    border: 1px solid #d0e6dc;
+    border-radius: 14px;
+    padding: 25px 20px;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skills figure:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(31, 61, 53, 0.15);
+}
+
+.skills img {
+    height: 70px;
+}
+
+.skills figcaption {
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f3d35;
+}
+
+/* ===== LIENS ===== */
+a {
+    color: inherit;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 32px;
+    }
+
+    section {
+        margin: 40px 15px;
+        padding: 30px 20px;
+    }
+
+}
+@media (max-width: 768px) {
+    .profile-pic {
+        width: 150px;
+        height: 200px;
+    }
+}
+
+/* ===== FOOTER MODERNE ===== */
+
+.main-footer {
+    background: linear-gradient(135deg, #9fd6c2, #bfe5d6);
+    padding-top: 60px;
+    margin-top: 100px;
+    color: #1f3d35;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 8%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-col h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.footer-col h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #1f3d35;
+    font-size: 14px;
+    transition: opacity 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    opacity: 0.7;
+}
+
+.footer-note {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 13px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 25px 10px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(31, 61, 53, 0.2);
+    font-size: 13px;
+}
+/* ===== ORGANISATION GÉNÉRALE ===== */
+
+section {
+    background-color: #ffffff;
+    max-width: 1000px;
+    margin: 80px auto;   /* ← espace vertical rétabli */
+    padding: 60px 8%;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+
+
+
+
+/* ===== BOUTON ===== */
+
+.reveal-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    background: #9fd6c2;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.reveal-btn:hover {
+    background: #9fd6c2;
+    transform: translateY(-2px);
+}
+
+/* ===== EFFET FLOU ===== */
+
+.blur {
+    filter: blur(5px);
+    user-select: none;
+    pointer-events: none; /* Empêche TOUS les clics sur les éléments floutés */
+}
+
+
+/* ===== LIGHTBOX PHOTO ===== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+
+
+/* BOUTONS */
+.book-container button {
+    padding: 12px 18px;
+    font-size: 20px;
+    border: none;
+    background: #9fd6c2;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+} 
