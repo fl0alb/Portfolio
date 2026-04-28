@@ -600,13 +600,16 @@ h2 {
     border-radius: 8px;
     cursor: pointer;
 } 
-
 .inline-list {
-    list-style: none; /* enlève les points par défaut */
-    padding: 0;
-    display: flex;
-    gap: 30px; /* espace entre les noms */
-    flex-wrap: wrap;
+    display: flex !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 10px 0 !important;
+    gap: 25px;
+}
+
+.inline-list li {
+    display: inline;
 }
 
 .inline-list li::before {
